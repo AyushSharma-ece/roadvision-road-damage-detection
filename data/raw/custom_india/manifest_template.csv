@@ -1,0 +1,3 @@
+filename,road_type,surface_type,lighting,moisture,camera_angle,has_damage,expected_classes,latitude,longitude,scale_reference_note
+example_urban_dry_01.jpg,urban,asphalt,daylight,dry,oblique,true,"D40;D20",,,none
+example_clean_highway_01.jpg,highway,asphalt,daylight,dry,oblique,false,"",,,none

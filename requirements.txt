@@ -1,0 +1,11 @@
+# Supporting Python dependencies for RoadVision (Python 3.11 compatible)
+numpy>=2.0.0,<3.0.0
+opencv-python>=4.9.0
+pillow>=10.0.0
+ultralytics>=8.3.0
+reportlab>=4.0.0
+requests>=2.31.0
+PyYAML>=6.0.1
+pytest>=8.0.0
+# Optional GPU training (install CUDA build matching system NVIDIA driver when GPU training in Python):
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126

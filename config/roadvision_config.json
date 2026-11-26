@@ -1,0 +1,80 @@
+{
+  "project_name": "RoadVision",
+  "project_subtitle": "Intelligent Road Damage Detection, Classification and Severity Assessment System",
+  "version": "1.0.0",
+  "paths": {
+    "data_raw": "data/raw",
+    "data_interim": "data/interim",
+    "data_processed": "data/processed",
+    "models_dir": "models",
+    "reports_dir": "reports",
+    "logs_dir": "logs",
+    "database_path": "data/roadvision_inspections.db",
+    "database_backup_dir": "data/backups",
+    "classes_config": "config/classes.json"
+  },
+  "runtime": {
+    "prefer_gpu": true,
+    "python_executable": "",
+    "detector_backend": "auto",
+    "fallback_backend": "matlab_squeezenet",
+    "random_seed": 42
+  },
+  "preprocessing": {
+    "target_size": [640, 640],
+    "resize_mode": "letterbox",
+    "denoise_method": "bilateral",
+    "gaussian_sigma": 1.0,
+    "median_kernel": [3, 3],
+    "bilateral_degree_of_smoothing": 25.0,
+    "bilateral_spatial_sigma": 2.0,
+    "contrast_method": "clahe",
+    "clahe_clip_limit": 0.015,
+    "clahe_tiles": [8, 8],
+    "gamma_value": 1.0,
+    "edge_method": "canny",
+    "canny_thresholds": [0.08, 0.22],
+    "morphology_se_radius": 2
+  },
+  "detection": {
+    "confidence_threshold": 0.30,
+    "nms_iou_threshold": 0.45,
+    "max_detections_per_image": 100,
+    "yolo_input_size": [640, 640],
+    "primary_model_path": "models/yolov8s_roadvision_best.pt",
+    "primary_onnx_path": "models/yolov8s_roadvision_best.onnx",
+    "matlab_baseline_path": "models/matlab_squeezenet_detector.mat"
+  },
+  "severity": {
+    "notes": "Heuristic/calibrated image-space scoring based on relative bbox area and defect class weight. Physical dimensions require known camera calibration (px_per_cm); 2D images never measure pothole depth.",
+    "low_max_score": 0.35,
+    "medium_max_score": 0.68,
+    "area_saturation_ratio": 0.12,
+    "confidence_weight": 0.15,
+    "area_weight": 0.55,
+    "class_risk_weight": 0.30,
+    "px_per_cm_calibrated": null
+  },
+  "segmentation": {
+    "enabled": true,
+    "method": "auto",
+    "adaptive_sensitivity": 0.55,
+    "min_component_pixels": 35,
+    "closing_radius": 3
+  },
+  "video": {
+    "frame_stride": 1,
+    "iou_match_threshold": 0.25,
+    "max_missed_frames": 8,
+    "min_hits_to_confirm": 2,
+    "output_codec": "Motion JPEG AVI"
+  },
+  "gps": {
+    "default_fallback_label": "GPS Unavailable (Unverified Location)",
+    "cluster_distance_meters": 25.0
+  },
+  "reporting": {
+    "institution_label": "ECE Engineering Project — RoadVision",
+    "include_limitations_disclaimer": true
+  }
+}

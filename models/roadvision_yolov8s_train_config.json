@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-11-25T17:28:09.043949+00:00",
+  "torch_version": "2.14.1+cu126",
+  "cuda_available": true,
+  "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "train_config": {
+    "data": "C:\\Users\\Ayush\\OneDrive\\Documents\\ROADVISION\\data\\processed\\yolo_dataset\\roadvision_rdd.yaml",
+    "epochs": 18,
+    "batch": 16,
+    "imgsz": 640,
+    "seed": 42,
+    "deterministic": true,
+    "device": "0",
+    "project": "runs\\detect",
+    "name": "roadvision_yolov8s",
+    "exist_ok": true,
+    "resume": false,
+    "save": true,
+    "save_period": 5,
+    "amp": true,
+    "patience": 8,
+    "workers": 2
+  }
+}

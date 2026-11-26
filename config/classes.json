@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "extensible_note": "Add new classes by appending an entry with unique integer id, code, display_name, risk_weight, and RGB color, then retrain or fine-tune the detector.",
+  "classes": [
+    {
+      "id": 0,
+      "code": "D00",
+      "display_name": "Longitudinal Crack",
+      "group": "crack",
+      "risk_weight": 0.45,
+      "color_rgb": [0, 180, 255],
+      "description": "Cracks running predominantly parallel to the road centerline / traffic direction."
+    },
+    {
+      "id": 1,
+      "code": "D10",
+      "display_name": "Transverse Crack",
+      "group": "crack",
+      "risk_weight": 0.55,
+      "color_rgb": [255, 190, 0],
+      "description": "Cracks running perpendicular across the pavement lane."
+    },
+    {
+      "id": 2,
+      "code": "D20",
+      "display_name": "Alligator Crack",
+      "group": "crack",
+      "risk_weight": 0.80,
+      "color_rgb": [255, 100, 0],
+      "description": "Interconnected fatigue cracking forming polygonal blocks resembling alligator skin."
+    },
+    {
+      "id": 3,
+      "code": "D40",
+      "display_name": "Pothole",
+      "group": "pothole",
+      "risk_weight": 1.00,
+      "color_rgb": [235, 45, 55],
+      "description": "Localized structural bowl-shaped depression or surface collapse in the pavement."
+    }
+  ]
+}

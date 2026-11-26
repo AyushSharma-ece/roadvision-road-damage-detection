@@ -1,0 +1,61 @@
+# Raw & interim large datasets (downloaded reproducibly via scripts/download_datasets.py)
+data/raw/archives/
+data/raw/rdd2022/
+data/raw/cfd/
+data/raw/deepcrack/
+data/raw/pothole600/
+data/raw/crack500/
+data/raw/custom_india/*.jpg
+data/raw/custom_india/*.jpeg
+data/raw/custom_india/*.png
+data/interim/
+data/processed/
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/backups/
+
+# Large model checkpoints & training runs (document download/training in models/README.md)
+models/*.pt
+models/*.onnx
+models/*.mat
+models/*.engine
+models/pretrained/
+models/checkpoints/
+runs/
+weights/
+
+# Generated outputs & logs
+reports/*.pdf
+reports/*.png
+reports/*.json
+reports/*.avi
+reports/*.mp4
+reports/annotated/
+reports/eval_plots/
+reports/videos/
+logs/
+
+# Python & virtual environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# MATLAB transient & build artifacts
+*.asv
+*.mex*
+*.slxc
+slprj/
+toolbox_cache*.xml
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.tmp
+*.bak
